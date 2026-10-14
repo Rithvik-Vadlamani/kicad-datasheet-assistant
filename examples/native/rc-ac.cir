@@ -1,0 +1,7 @@
+Readable RC fixture: analytical low-pass comparison
+V1 in 0 AC 1
+R1 in out 1k
+C1 out 0 100n
+.ac lin 1 1591.54943091895 1591.54943091895
+.print ac vm(out) vp(out)
+.end

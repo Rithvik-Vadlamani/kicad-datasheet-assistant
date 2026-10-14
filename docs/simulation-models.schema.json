@@ -1,0 +1,57 @@
+{
+  "$defs": {
+    "ModelSource": {
+      "additionalProperties": false,
+      "properties": {
+        "path": {
+          "title": "Path",
+          "type": "string"
+        },
+        "sha256": {
+          "pattern": "^[0-9a-f]{64}$",
+          "title": "Sha256",
+          "type": "string"
+        },
+        "source_url": {
+          "title": "Source Url",
+          "type": "string"
+        },
+        "review_note": {
+          "minLength": 20,
+          "title": "Review Note",
+          "type": "string"
+        }
+      },
+      "required": [
+        "path",
+        "sha256",
+        "source_url",
+        "review_note"
+      ],
+      "title": "ModelSource",
+      "type": "object"
+    }
+  },
+  "additionalProperties": false,
+  "properties": {
+    "schema_version": {
+      "const": 1,
+      "default": 1,
+      "title": "Schema Version",
+      "type": "integer"
+    },
+    "models": {
+      "items": {
+        "$ref": "#/$defs/ModelSource"
+      },
+      "minItems": 1,
+      "title": "Models",
+      "type": "array"
+    }
+  },
+  "required": [
+    "models"
+  ],
+  "title": "ModelManifest",
+  "type": "object"
+}

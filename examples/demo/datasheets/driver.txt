@@ -1,0 +1,12 @@
+FICTIONAL EDUCATIONAL DATASHEET. Not a commercial part. Never use for hardware design.
+DEMO-MCU-33 | Revision A | PDF-equivalent logical page 1
+
+Recommended operating supply voltage: 3.0 V minimum, 3.6 V maximum.
+Absolute maximum supply voltage: -0.3 V minimum, 4.0 V maximum.
+Digital outputs are push-pull.
+VOH minimum is 2.4 V at VDD = 3.0 V, IOH = -4 mA, TA = -40 to 85 degC.
+VOL maximum is 0.4 V at VDD = 3.0 V, IOL = 4 mA, TA = -40 to 85 degC.
+Output pin 3 is GPIO_TX. Pins 1 and 2 are VDD and GND respectively.
+
+No guarantee is provided here for reverse injection while VDD is off.
+Missing data: output timing, pin capacitance, and transient overshoot limits.

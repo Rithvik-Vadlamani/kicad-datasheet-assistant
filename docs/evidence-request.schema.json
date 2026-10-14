@@ -1,0 +1,153 @@
+{
+  "$defs": {
+    "Candidate": {
+      "additionalProperties": false,
+      "properties": {
+        "ref": {
+          "minLength": 1,
+          "title": "Ref",
+          "type": "string"
+        },
+        "part": {
+          "minLength": 1,
+          "title": "Part",
+          "type": "string"
+        },
+        "package": {
+          "minLength": 1,
+          "title": "Package",
+          "type": "string"
+        },
+        "revision": {
+          "minLength": 1,
+          "title": "Revision",
+          "type": "string"
+        }
+      },
+      "required": [
+        "ref",
+        "part",
+        "package",
+        "revision"
+      ],
+      "title": "Candidate",
+      "type": "object"
+    },
+    "Obligation": {
+      "additionalProperties": false,
+      "properties": {
+        "id": {
+          "minLength": 1,
+          "title": "Id",
+          "type": "string"
+        },
+        "ref": {
+          "title": "Ref",
+          "type": "string"
+        },
+        "parameter": {
+          "minLength": 1,
+          "title": "Parameter",
+          "type": "string"
+        },
+        "category": {
+          "enum": [
+            "recommended",
+            "absolute_maximum",
+            "electrical",
+            "timing",
+            "thermal",
+            "mechanical"
+          ],
+          "title": "Category",
+          "type": "string"
+        },
+        "bound": {
+          "enum": [
+            "min",
+            "typ",
+            "max",
+            "nominal"
+          ],
+          "title": "Bound",
+          "type": "string"
+        },
+        "unit": {
+          "title": "Unit",
+          "type": "string"
+        },
+        "conditions": {
+          "additionalProperties": {
+            "type": "string"
+          },
+          "minProperties": 1,
+          "title": "Conditions",
+          "type": "object"
+        },
+        "query": {
+          "minLength": 3,
+          "title": "Query",
+          "type": "string"
+        }
+      },
+      "required": [
+        "id",
+        "ref",
+        "parameter",
+        "category",
+        "bound",
+        "unit",
+        "conditions",
+        "query"
+      ],
+      "title": "Obligation",
+      "type": "object"
+    }
+  },
+  "additionalProperties": false,
+  "properties": {
+    "schema_version": {
+      "const": 1,
+      "default": 1,
+      "title": "Schema Version",
+      "type": "integer"
+    },
+    "design_id": {
+      "minLength": 1,
+      "title": "Design Id",
+      "type": "string"
+    },
+    "topology": {
+      "default": "provisional",
+      "enum": [
+        "provisional",
+        "exported"
+      ],
+      "title": "Topology",
+      "type": "string"
+    },
+    "candidates": {
+      "items": {
+        "$ref": "#/$defs/Candidate"
+      },
+      "minItems": 1,
+      "title": "Candidates",
+      "type": "array"
+    },
+    "obligations": {
+      "items": {
+        "$ref": "#/$defs/Obligation"
+      },
+      "minItems": 1,
+      "title": "Obligations",
+      "type": "array"
+    }
+  },
+  "required": [
+    "design_id",
+    "candidates",
+    "obligations"
+  ],
+  "title": "EvidenceRequest",
+  "type": "object"
+}

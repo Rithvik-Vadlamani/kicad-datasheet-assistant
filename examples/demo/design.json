@@ -1,0 +1,166 @@
+{
+  "assumptions": [
+    "All components and specifications in this demo are fictional.",
+    "Logic analysis and regulator thermal analysis are separate teaching scenarios; the 3.0 V logic corner is not asserted to be the exact 3.3 V thermal scenario."
+  ],
+  "facts": {
+    "u1_voh": {
+      "value": 2.4,
+      "unit": "V",
+      "condition": "Fictional worst case: VDD 3.0 V, sourcing 4 mA, -40 to 85 degC.",
+      "reviewed": true,
+      "basis": "datasheet",
+      "document": "driver",
+      "page": 1,
+      "quote": "VOH minimum is 2.4 V at VDD = 3.0 V, IOH = -4 mA, TA = -40 to 85 degC.",
+      "ref": "U1"
+    },
+    "u1_vol": {
+      "value": 0.4,
+      "unit": "V",
+      "condition": "Fictional worst case: VDD 3.0 V, sinking 4 mA, -40 to 85 degC.",
+      "reviewed": true,
+      "basis": "datasheet",
+      "document": "driver",
+      "page": 1,
+      "quote": "VOL maximum is 0.4 V at VDD = 3.0 V, IOL = 4 mA, TA = -40 to 85 degC.",
+      "ref": "U1"
+    },
+    "u2_vih": {
+      "value": 3.5,
+      "unit": "V",
+      "condition": "Fictional receiver exactly 5.0 V, -40 to 85 degC.",
+      "reviewed": true,
+      "basis": "datasheet",
+      "document": "receiver",
+      "page": 1,
+      "quote": "VIH minimum is 3.5 V at VDD = 5.0 V, TA = -40 to 85 degC.",
+      "ref": "U2"
+    },
+    "u2_vil": {
+      "value": 1.5,
+      "unit": "V",
+      "condition": "Fictional receiver exactly 5.0 V, -40 to 85 degC.",
+      "reviewed": true,
+      "basis": "datasheet",
+      "document": "receiver",
+      "page": 1,
+      "quote": "VIL maximum is 1.5 V at VDD = 5.0 V, TA = -40 to 85 degC.",
+      "ref": "U2"
+    },
+    "u3_iq": {
+      "value": 0.005,
+      "unit": "A",
+      "condition": "Fictional 12 V input and 0.2 A output teaching scenario.",
+      "reviewed": true,
+      "basis": "datasheet",
+      "document": "regulator",
+      "page": 1,
+      "quote": "Ground current maximum is 0.005 A at the scenario's input and load conditions.",
+      "ref": "U3"
+    },
+    "u3_theta": {
+      "value": 100.0,
+      "unit": "K/W",
+      "condition": "Fictional specified teaching PCB in steady state, fixed airflow.",
+      "reviewed": true,
+      "basis": "datasheet",
+      "document": "regulator",
+      "page": 1,
+      "quote": "Junction-to-ambient thermal resistance is 100 K/W for the declared teaching PCB.",
+      "ref": "U3"
+    },
+    "u3_tj": {
+      "value": 125.0,
+      "unit": "degC",
+      "condition": "Fictional maximum recommended steady-state junction temperature.",
+      "reviewed": true,
+      "basis": "datasheet",
+      "document": "regulator",
+      "page": 1,
+      "quote": "Maximum recommended junction temperature is 125 degC.",
+      "ref": "U3"
+    },
+    "vin": {
+      "value": 12.0,
+      "unit": "V",
+      "condition": "Teaching assumption: constant 12 V input, no tolerance or transients.",
+      "reviewed": true,
+      "basis": "scenario",
+      "document": null,
+      "page": null,
+      "quote": null,
+      "ref": null
+    },
+    "vout": {
+      "value": 3.3,
+      "unit": "V",
+      "condition": "Teaching assumption: constant 3.3 V output; dropout ignored.",
+      "reviewed": true,
+      "basis": "scenario",
+      "document": null,
+      "page": null,
+      "quote": null,
+      "ref": null
+    },
+    "load": {
+      "value": 0.2,
+      "unit": "A",
+      "condition": "Teaching assumption: 0.2 A total steady load on the LDO.",
+      "reviewed": true,
+      "basis": "scenario",
+      "document": null,
+      "page": null,
+      "quote": null,
+      "ref": null
+    },
+    "ambient": {
+      "value": 40.0,
+      "unit": "degC",
+      "condition": "Teaching assumption: 40 degC ambient and matching declared PCB.",
+      "reviewed": true,
+      "basis": "scenario",
+      "document": null,
+      "page": null,
+      "quote": null,
+      "ref": null
+    }
+  },
+  "checks": [
+    {
+      "id": "U1-to-U2-logic",
+      "kind": "logic",
+      "inputs": {
+        "voh_min": "u1_voh",
+        "vol_max": "u1_vol",
+        "vih_min": "u2_vih",
+        "vil_max": "u2_vil"
+      },
+      "endpoints": [
+        "U1.3",
+        "U2.3"
+      ],
+      "conditions": "Synthetic static interface at the listed supplies and temperatures. Receiver leakage is within the driver's stated load; capacitance/timing/power sequencing remain unassessed.",
+      "conditions_reviewed": true
+    },
+    {
+      "id": "U3-thermal",
+      "kind": "ldo_thermal",
+      "inputs": {
+        "vin_max": "vin",
+        "vout_min": "vout",
+        "iout_max": "load",
+        "iq_max": "u3_iq",
+        "theta_ja": "u3_theta",
+        "ambient_max": "ambient",
+        "junction_limit": "u3_tj"
+      },
+      "endpoints": [
+        "U3.1",
+        "U3.3"
+      ],
+      "conditions": "Synthetic steady-state linear regulator, exact scenario voltages, matching teaching board thermal resistance. This is an estimate, not measurement or SPICE.",
+      "conditions_reviewed": true
+    }
+  ]
+}

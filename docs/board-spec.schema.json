@@ -1,0 +1,278 @@
+{
+  "$defs": {
+    "Placement": {
+      "additionalProperties": false,
+      "properties": {
+        "ref": {
+          "title": "Ref",
+          "type": "string"
+        },
+        "at": {
+          "maxItems": 2,
+          "minItems": 2,
+          "prefixItems": [
+            {
+              "type": "number"
+            },
+            {
+              "type": "number"
+            }
+          ],
+          "title": "At",
+          "type": "array"
+        },
+        "angle": {
+          "default": 0,
+          "maximum": 360,
+          "minimum": -360,
+          "title": "Angle",
+          "type": "number"
+        },
+        "side": {
+          "default": "top",
+          "enum": [
+            "top",
+            "bottom"
+          ],
+          "title": "Side",
+          "type": "string"
+        }
+      },
+      "required": [
+        "ref",
+        "at"
+      ],
+      "title": "Placement",
+      "type": "object"
+    },
+    "Route": {
+      "additionalProperties": false,
+      "properties": {
+        "net": {
+          "title": "Net",
+          "type": "string"
+        },
+        "points": {
+          "items": {
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "maxItems": 2,
+                "minItems": 2,
+                "prefixItems": [
+                  {
+                    "type": "number"
+                  },
+                  {
+                    "type": "number"
+                  }
+                ],
+                "type": "array"
+              }
+            ]
+          },
+          "minItems": 2,
+          "title": "Points",
+          "type": "array"
+        },
+        "layer": {
+          "default": "F.Cu",
+          "title": "Layer",
+          "type": "string"
+        },
+        "width": {
+          "exclusiveMinimum": 0,
+          "title": "Width",
+          "type": "number"
+        }
+      },
+      "required": [
+        "net",
+        "points",
+        "width"
+      ],
+      "title": "Route",
+      "type": "object"
+    },
+    "Via": {
+      "additionalProperties": false,
+      "properties": {
+        "net": {
+          "title": "Net",
+          "type": "string"
+        },
+        "at": {
+          "maxItems": 2,
+          "minItems": 2,
+          "prefixItems": [
+            {
+              "type": "number"
+            },
+            {
+              "type": "number"
+            }
+          ],
+          "title": "At",
+          "type": "array"
+        },
+        "diameter": {
+          "exclusiveMinimum": 0,
+          "title": "Diameter",
+          "type": "number"
+        },
+        "drill": {
+          "exclusiveMinimum": 0,
+          "title": "Drill",
+          "type": "number"
+        }
+      },
+      "required": [
+        "net",
+        "at",
+        "diameter",
+        "drill"
+      ],
+      "title": "Via",
+      "type": "object"
+    },
+    "Zone": {
+      "additionalProperties": false,
+      "properties": {
+        "net": {
+          "title": "Net",
+          "type": "string"
+        },
+        "layer": {
+          "title": "Layer",
+          "type": "string"
+        },
+        "points": {
+          "items": {
+            "maxItems": 2,
+            "minItems": 2,
+            "prefixItems": [
+              {
+                "type": "number"
+              },
+              {
+                "type": "number"
+              }
+            ],
+            "type": "array"
+          },
+          "minItems": 3,
+          "title": "Points",
+          "type": "array"
+        },
+        "clearance": {
+          "exclusiveMinimum": 0,
+          "title": "Clearance",
+          "type": "number"
+        },
+        "thermal_gap": {
+          "exclusiveMinimum": 0,
+          "title": "Thermal Gap",
+          "type": "number"
+        },
+        "thermal_width": {
+          "exclusiveMinimum": 0,
+          "title": "Thermal Width",
+          "type": "number"
+        }
+      },
+      "required": [
+        "net",
+        "layer",
+        "points",
+        "clearance",
+        "thermal_gap",
+        "thermal_width"
+      ],
+      "title": "Zone",
+      "type": "object"
+    }
+  },
+  "additionalProperties": false,
+  "properties": {
+    "schema_version": {
+      "const": 1,
+      "default": 1,
+      "title": "Schema Version",
+      "type": "integer"
+    },
+    "outline": {
+      "items": {
+        "maxItems": 2,
+        "minItems": 2,
+        "prefixItems": [
+          {
+            "type": "number"
+          },
+          {
+            "type": "number"
+          }
+        ],
+        "type": "array"
+      },
+      "minItems": 3,
+      "title": "Outline",
+      "type": "array"
+    },
+    "placements": {
+      "items": {
+        "$ref": "#/$defs/Placement"
+      },
+      "minItems": 1,
+      "title": "Placements",
+      "type": "array"
+    },
+    "routes": {
+      "items": {
+        "$ref": "#/$defs/Route"
+      },
+      "minItems": 1,
+      "title": "Routes",
+      "type": "array"
+    },
+    "zones": {
+      "items": {
+        "$ref": "#/$defs/Zone"
+      },
+      "title": "Zones",
+      "type": "array"
+    },
+    "thickness": {
+      "default": 1.6,
+      "exclusiveMinimum": 0,
+      "title": "Thickness",
+      "type": "number"
+    },
+    "copper_layers": {
+      "default": 2,
+      "enum": [
+        2,
+        4,
+        6,
+        8
+      ],
+      "title": "Copper Layers",
+      "type": "integer"
+    },
+    "vias": {
+      "items": {
+        "$ref": "#/$defs/Via"
+      },
+      "title": "Vias",
+      "type": "array"
+    }
+  },
+  "required": [
+    "outline",
+    "placements",
+    "routes"
+  ],
+  "title": "BoardSpec",
+  "type": "object"
+}

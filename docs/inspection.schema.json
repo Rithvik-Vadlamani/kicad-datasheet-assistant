@@ -1,0 +1,72 @@
+{
+  "additionalProperties": false,
+  "properties": {
+    "schema_version": {
+      "const": 1,
+      "default": 1,
+      "title": "Schema Version",
+      "type": "integer"
+    },
+    "kind": {
+      "enum": [
+        "visual",
+        "physical"
+      ],
+      "title": "Kind",
+      "type": "string"
+    },
+    "actor": {
+      "minLength": 1,
+      "title": "Actor",
+      "type": "string"
+    },
+    "timestamp": {
+      "title": "Timestamp",
+      "type": "string"
+    },
+    "verdict": {
+      "enum": [
+        "pass",
+        "fail",
+        "unassessed"
+      ],
+      "title": "Verdict",
+      "type": "string"
+    },
+    "input_hashes": {
+      "additionalProperties": {
+        "type": "string"
+      },
+      "minProperties": 1,
+      "title": "Input Hashes",
+      "type": "object"
+    },
+    "inspected": {
+      "items": {
+        "type": "string"
+      },
+      "minItems": 1,
+      "title": "Inspected",
+      "type": "array"
+    },
+    "findings": {
+      "items": {
+        "type": "string"
+      },
+      "minItems": 1,
+      "title": "Findings",
+      "type": "array"
+    }
+  },
+  "required": [
+    "kind",
+    "actor",
+    "timestamp",
+    "verdict",
+    "input_hashes",
+    "inspected",
+    "findings"
+  ],
+  "title": "Inspection",
+  "type": "object"
+}

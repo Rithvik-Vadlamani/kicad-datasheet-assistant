@@ -1,0 +1,341 @@
+{
+  "cases": 200,
+  "documents": 25,
+  "benchmark_hash": "c39dd3d797b7ff5b7da44bb3034a828c0fddb0f8d01a167374bb73be6a089712",
+  "splits": {
+    "development": 64,
+    "calibration": 48,
+    "holdout": 88
+  },
+  "label_method": "Deterministic row/section anchors. These are navigation probes, not independently human-labeled engineering answers.",
+  "family_splits": {
+    "ina240": [
+      "current_sense",
+      "calibration"
+    ],
+    "lm76005": [
+      "buck",
+      "development"
+    ],
+    "csd19531q5a": [
+      "mosfet",
+      "development"
+    ],
+    "tlv9062": [
+      "opamp",
+      "development"
+    ],
+    "tps7a20": [
+      "linear_regulator",
+      "calibration"
+    ],
+    "tps62160": [
+      "buck",
+      "development"
+    ],
+    "sn74lvc1g17": [
+      "logic",
+      "holdout"
+    ],
+    "tmp117": [
+      "temperature_sensor",
+      "calibration"
+    ],
+    "ads1115": [
+      "adc",
+      "holdout"
+    ],
+    "tca9548a": [
+      "i2c_switch",
+      "holdout"
+    ],
+    "irf540": [
+      "mosfet",
+      "development"
+    ],
+    "1n4001": [
+      "diode",
+      "holdout"
+    ],
+    "lm317": [
+      "linear_regulator",
+      "calibration"
+    ],
+    "2n3904": [
+      "bjt",
+      "holdout"
+    ],
+    "ap2112": [
+      "linear_regulator",
+      "calibration"
+    ],
+    "bav99": [
+      "diode",
+      "holdout"
+    ],
+    "lm324": [
+      "opamp",
+      "development"
+    ],
+    "lm393": [
+      "comparator",
+      "holdout"
+    ],
+    "tl431": [
+      "shunt_reference",
+      "holdout"
+    ],
+    "2n7000": [
+      "mosfet",
+      "development"
+    ],
+    "ap3211": [
+      "buck",
+      "development"
+    ],
+    "pam8403": [
+      "audio",
+      "holdout"
+    ],
+    "az1117": [
+      "linear_regulator",
+      "calibration"
+    ],
+    "lm5155": [
+      "boost",
+      "holdout"
+    ],
+    "iso7741": [
+      "isolator",
+      "holdout"
+    ]
+  },
+  "sources": [
+    {
+      "id": "ina240",
+      "url": "https://www.ti.com/lit/ds/symlink/ina240.pdf",
+      "sha256": "c9d26e72ebdb52a169cbaca8f47d3811833c0afb765335a14f53f05c1a8b1854",
+      "parts": [
+        "INA240"
+      ],
+      "manufacturer": "Texas Instruments"
+    },
+    {
+      "id": "lm76005",
+      "url": "https://www.ti.com/lit/ds/symlink/lm76005.pdf",
+      "sha256": "ec5c8cee26092760e5fd781d1d18e8c0e6855c54b423fee076fd1f0ff610bb8c",
+      "parts": [
+        "LM76005"
+      ],
+      "manufacturer": "Texas Instruments"
+    },
+    {
+      "id": "csd19531q5a",
+      "url": "https://www.ti.com/lit/ds/symlink/csd19531q5a.pdf",
+      "sha256": "bee261f0df17541099fec60efdc9cd4cb0cf00de5ac0ba2ff582657038cbcf92",
+      "parts": [
+        "CSD19531Q5A"
+      ],
+      "manufacturer": "Texas Instruments"
+    },
+    {
+      "id": "tlv9062",
+      "url": "https://www.ti.com/lit/ds/symlink/tlv9062.pdf",
+      "sha256": "18e67fa48b2a3c2e0a3d21abae8600e8cd864fe62f1b4c0d23d3fffe86a44dc4",
+      "parts": [
+        "TLV9062"
+      ],
+      "manufacturer": "Texas Instruments"
+    },
+    {
+      "id": "tps7a20",
+      "url": "https://www.ti.com/lit/ds/symlink/tps7a20.pdf",
+      "sha256": "663a9ff5bca608643e711652cba00e7b8bf955c0993a9b86fa108d24d58b8ddc",
+      "parts": [
+        "TPS7A20"
+      ],
+      "manufacturer": "Texas Instruments"
+    },
+    {
+      "id": "tps62160",
+      "url": "https://www.ti.com/lit/ds/symlink/tps62160.pdf",
+      "sha256": "abc824ca04ee985ede3a513172ccdd2a42c8e1fdcfc3af5acdbe2c1af31aaa72",
+      "parts": [
+        "TPS62160"
+      ],
+      "manufacturer": "Texas Instruments"
+    },
+    {
+      "id": "sn74lvc1g17",
+      "url": "https://www.ti.com/lit/ds/symlink/sn74lvc1g17.pdf",
+      "sha256": "c76fa723fac4502423967a1aa087dd669106b52b8de620c024b26e56f5d59309",
+      "parts": [
+        "SN74LVC1G17"
+      ],
+      "manufacturer": "Texas Instruments"
+    },
+    {
+      "id": "tmp117",
+      "url": "https://www.ti.com/lit/ds/symlink/tmp117.pdf",
+      "sha256": "b33614678dd46e7997f813ccefb118796dcbcc97c9ba264806703ee453a3d555",
+      "parts": [
+        "TMP117"
+      ],
+      "manufacturer": "Texas Instruments"
+    },
+    {
+      "id": "ads1115",
+      "url": "https://www.ti.com/lit/ds/symlink/ads1115.pdf",
+      "sha256": "eefff4d412ce2dcd7e659f47238edc9b2fa02e5971f2625af730502033701834",
+      "parts": [
+        "ADS1115"
+      ],
+      "manufacturer": "Texas Instruments"
+    },
+    {
+      "id": "tca9548a",
+      "url": "https://www.ti.com/lit/ds/symlink/tca9548a.pdf",
+      "sha256": "2137822fd7128945ea44e83f4e100a932b30964d763715eeffe217ee6080a2dc",
+      "parts": [
+        "TCA9548A"
+      ],
+      "manufacturer": "Texas Instruments"
+    },
+    {
+      "id": "irf540",
+      "url": "https://www.vishay.com/docs/91021/irf540.pdf",
+      "sha256": "7002a04312724c95d050a716f5979ccd4f7dc42aed1b097d2685cd2df4327768",
+      "parts": [
+        "IRF540"
+      ],
+      "manufacturer": "Vishay"
+    },
+    {
+      "id": "1n4001",
+      "url": "https://www.vishay.com/docs/88503/1n4001.pdf",
+      "sha256": "56a77c6615c90c11993d37d94e67f335cf3a2d1fe00f25d2a1a4833834356d07",
+      "parts": [
+        "1N4001"
+      ],
+      "manufacturer": "Vishay"
+    },
+    {
+      "id": "lm317",
+      "url": "https://www.onsemi.com/download/data-sheet/pdf/lm317-d.pdf",
+      "sha256": "dcdbf998054b35c0d46554c15f57c37b923e0cca971c820712ca14b60a93ee2e",
+      "parts": [
+        "LM317"
+      ],
+      "manufacturer": "onsemi"
+    },
+    {
+      "id": "2n3904",
+      "url": "https://www.onsemi.com/download/data-sheet/pdf/2n3903-d.pdf",
+      "sha256": "402ad9974160dd0317617890c1b54a78b6cf4373510861129d21a26a391c53f6",
+      "parts": [
+        "2N3904"
+      ],
+      "manufacturer": "onsemi"
+    },
+    {
+      "id": "ap2112",
+      "url": "https://www.diodes.com/assets/Datasheets/AP2112.pdf",
+      "sha256": "ef8d376f2ec356e29172eb9e053819a0ebdcc576dba7fc9ab0505c568427920f",
+      "parts": [
+        "AP2112"
+      ],
+      "manufacturer": "Diodes Incorporated"
+    },
+    {
+      "id": "bav99",
+      "url": "https://www.diodes.com/assets/Datasheets/BAV99.pdf",
+      "sha256": "af984519a0a32c6fa5bb5eb6caf7c4181b2f4f27f96291638e31a5b3b2dc8eed",
+      "parts": [
+        "BAV99"
+      ],
+      "manufacturer": "Diodes Incorporated"
+    },
+    {
+      "id": "lm324",
+      "url": "https://www.onsemi.com/download/data-sheet/pdf/lm324-d.pdf",
+      "sha256": "c9791a17bed7b1bde7112eaf2bb71eaf7c41e519dc8df5fdd61119faa30f0dd6",
+      "parts": [
+        "LM324"
+      ],
+      "manufacturer": "onsemi"
+    },
+    {
+      "id": "lm393",
+      "url": "https://www.onsemi.com/download/data-sheet/pdf/lm393-d.pdf",
+      "sha256": "b8f8af9705ccfacde37fac70f434e673fb3109f7dbcbc50acd5e9a955b04ca22",
+      "parts": [
+        "LM393"
+      ],
+      "manufacturer": "onsemi"
+    },
+    {
+      "id": "tl431",
+      "url": "https://www.onsemi.com/download/data-sheet/pdf/tl431-d.pdf",
+      "sha256": "1f4443f512b9bfc295829f227874823fff41f0e70bacb0a3c0d54bfef3473edb",
+      "parts": [
+        "TL431"
+      ],
+      "manufacturer": "onsemi"
+    },
+    {
+      "id": "2n7000",
+      "url": "https://www.onsemi.com/download/data-sheet/pdf/2n7000-d.pdf",
+      "sha256": "b9cfecc7be11b19ac817e3160d6c862494f28cae0bdc3e826ab83ab15749c228",
+      "parts": [
+        "2N7000"
+      ],
+      "manufacturer": "onsemi"
+    },
+    {
+      "id": "ap3211",
+      "url": "https://www.diodes.com/assets/Datasheets/AP3211.pdf",
+      "sha256": "e19ceaa554a5443e4f03feaad6ef6a0166a2cc075519ddd380924de488f02619",
+      "parts": [
+        "AP3211"
+      ],
+      "manufacturer": "Diodes Incorporated"
+    },
+    {
+      "id": "pam8403",
+      "url": "https://www.diodes.com/assets/Datasheets/PAM8403.pdf",
+      "sha256": "9d853d04cace827e5349bd89cbf412292b855089669c7910cf0c062940c735b1",
+      "parts": [
+        "PAM8403"
+      ],
+      "manufacturer": "Diodes Incorporated"
+    },
+    {
+      "id": "az1117",
+      "url": "https://www.diodes.com/assets/Datasheets/AZ1117.pdf",
+      "sha256": "4c840908de81a9748272a561a04ff18fc872e964085d11ed3fbb0e4584c37b10",
+      "parts": [
+        "AZ1117"
+      ],
+      "manufacturer": "Diodes Incorporated"
+    },
+    {
+      "id": "lm5155",
+      "url": "https://www.ti.com/lit/ds/symlink/lm5155.pdf",
+      "sha256": "e65e47f61e64e3c3dc9cc1905f53bf014713abf562c0c6138b32db26a4b6f466",
+      "parts": [
+        "LM5155"
+      ],
+      "manufacturer": "Texas Instruments"
+    },
+    {
+      "id": "iso7741",
+      "url": "https://www.ti.com/lit/ds/symlink/iso7741.pdf",
+      "sha256": "2ca99c9d6fcbe47346bff00f5019b441f20c6ab6e270926a709f04f729912a1f",
+      "parts": [
+        "ISO7741"
+      ],
+      "manufacturer": "Texas Instruments"
+    }
+  ],
+  "annotation_review": "All 150 anchor strings inspected in text before evaluation; disclaimer fragments were replaced by actual section headings. This is not independent human original-page/answer annotation."
+}

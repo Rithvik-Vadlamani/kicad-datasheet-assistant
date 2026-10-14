@@ -1,0 +1,150 @@
+ina240-thermal | p4 | R Junction-to-ambient thermal resistance 149.1 113.5 °C/W
+ina240-limits | p4 | 7.1 Absolute Maximum Ratings
+ina240-conditions | p4 | 7.3 Recommended Operating Conditions
+ina240-electrical | p5 | 7.5 Electrical Characteristics
+ina240-pinout | p3 | 6 Pin Configuration and Functions
+ina240-layout | p24 | 11.1 Layout Guidelines
+lm76005-thermal | p6 | R Junction-to-ambient thermal resistance 29.6 °C/W
+lm76005-limits | p5 | 6.1 Absolute Maximum Ratings
+lm76005-conditions | p5 | 6.3 Recommended Operating Conditions
+lm76005-electrical | p6 | 6.5 Electrical Characteristics
+lm76005-timing | p4 | frequency. If floating, the default switching frequency is 400 kHz. Do not short to ground.
+lm76005-pinout | p3 | 5 Pin Configuration and Functions
+csd19531q5a-thermal | p3 | R Junction-to-AmbientThermalResistance(1)(2) 50
+csd19531q5a-limits | p1 | AbsoluteMaximum Ratings
+csd19531q5a-electrical | p3 | 5.1 Electrical Characteristics
+csd19531q5a-timing | p3 | t r RiseTime V DS =50V,V GS =10V, 5.8 ns
+csd19531q5a-layout | p10 | PCBLayoutTechniques.
+csd19531q5a-temperature | p1 | TJ, Tstg | OperatingJunctionand StorageTemperatureRange | –55to150 | °C
+tlv9062-thermal | p11 | R Junction-to-ambient thermal resistance 221.7 263.3 467 °C/W
+tlv9062-limits | p10 | 6.1 Absolute Maximum Ratings
+tlv9062-conditions | p10 | 6.3 Recommended Operating Conditions
+tlv9062-electrical | p13 | 6.10 Electrical Characteristics
+tlv9062-pinout | p5 | 5 Pin Configuration and Functions
+tlv9062-layout | p27 | 8.4.1 Layout Guidelines
+tps7a20-thermal | p6 | RθJA Junction-to-ambient thermal resistance 187.1 166.1 199.6 201.4 °C/W
+tps7a20-limits | p5 | 5.1 Absolute Maximum Ratings
+tps7a20-conditions | p5 | 5.3 Recommended Operating Conditions
+tps7a20-electrical | p6 | 5.5 Electrical Characteristics
+tps7a20-timing | p7 | 5.6 Switching Characteristics
+tps7a20-pinout | p3 | 4 Pin Configuration and Functions
+tps62160-thermal | p5 | R Junction-to-ambientthermalresistance 61.8 184.3 °C/W
+tps62160-limits | p5 | 7.1 Absolute Maximum Ratings(1)
+tps62160-conditions | p5 | 7.3 Recommended Operating Conditions
+tps62160-electrical | p6 | 7.5 Electrical Characteristics
+tps62160-timing | p11 | switching frequency of about 2.25 MHz. The frequency variation in PWM is controlled and depends on V , V
+tps62160-pinout | p4 | 6 Pin Configuration and Functions
+sn74lvc1g17-thermal | p5 | RθJA Junction-to-ambient thermal resistance 357.1 371.0 350 608 130 340 181
+sn74lvc1g17-limits | p4 | 5.1 Absolute Maximum Ratings
+sn74lvc1g17-conditions | p5 | 5.3 Recommended Operating Conditions
+sn74lvc1g17-electrical | p6 | 5.5 Electrical Characteristics—DC Limit Changes
+sn74lvc1g17-timing | p7 | 5.6 Switching Characteristics, C = 15pF
+sn74lvc1g17-pinout | p3 | 4 Pin Configuration and Functions
+tmp117-thermal | p5 | R Junction-to-ambient thermal resistance 133.2 70.7 °C/W
+tmp117-limits | p5 | 6.1 Absolute Maximum Ratings
+tmp117-conditions | p5 | 6.3 Recommended Operating Conditions
+tmp117-electrical | p6 | 6.5 Electrical Characteristics
+tmp117-timing | p7 | 6.6 Switching Characteristics
+tmp117-pinout | p4 | 5 Pin Configuration and Functions
+ads1115-thermal | p4 | R Junction-to-ambient thermal resistance 245.2 147.1 182.7 °C/W
+ads1115-limits | p4 | 5.1 Absolute Maximum Ratings
+ads1115-conditions | p4 | 5.3 Recommended Operating Conditions
+ads1115-electrical | p5 | 5.5 Electrical Characteristics
+ads1115-timing | p6 | t Rise time for both SDA and SCL signals(1) 300 160 ns
+ads1115-pinout | p3 | 4 Pin Configuration and Functions
+tca9548a-thermal | p5 | RθJA Junction-to-ambient thermal resistance 108.8 57.2 86.1 °C/W
+tca9548a-limits | p4 | 5.1 Absolute Maximum Ratings
+tca9548a-conditions | p4 | 5.3 Recommended Operating Conditions
+tca9548a-electrical | p6 | 5.5 Electrical Characteristics
+tca9548a-timing | p7 | ticr I2C input rise time 1000 ns
+tca9548a-pinout | p3 | 4 Pin Configuration and Functions
+irf540-thermal | p2 | Maximum junction-to-ambient R - 62
+irf540-limits | p1 | ABSOLUTE MAXIMUM RATINGS (T = 25 °C, unless otherwise noted)
+irf540-timing | p2 | Body diode reverse recovery time t - 180 360 ns
+irf540-temperature | p1 | Operating junction and storage temperature range T , T -55 to +175
+irf540-voltage | p1 | Drain-source voltage V 100
+irf540-current | p1 | Continuous drain current V at 10 V I
+1n4001-thermal | p2 | (1) Thermal resistance from junction to ambient at 0.375" (9.5 mm) lead length, PCB mounted
+1n4001-limits | p1 | MAXIMUM RATINGS (T = 25 °C unless otherwise noted)
+1n4001-electrical | p2 | ELECTRICAL CHARACTERISTICS (T = 25 °C unless otherwise noted)
+1n4001-temperature | p1 | Operating junction and
+1n4001-package | p4 | PACKAGE OUTLINE DIMENSIONS in inches (millimeters)
+1n4001-voltage | p1 | Maximum repetitive peak reverse voltage V 50 100 200 400 600 800 1000 V
+lm317-thermal | p2 | Thermal Resistance, Junction−to−Ambient (cid:3) JA 65 °C/W
+lm317-limits | p2 | MAXIMUM RATINGS
+lm317-electrical | p2 | ELECTRICAL CHARACTERISTICS
+lm317-temperature | p2 | Operating Junction Temperature Range TJ −55 to +150 °C
+lm317-package | p11 | PACKAGE DIMENSIONS
+lm317-current | p1 | Output Current in Excess of 1.5 A
+2n3904-thermal | p1 | Thermal Resistance, Junction−to−Ambient R(cid:2)JA 200 °C/W x = 3 or 4
+2n3904-limits | p1 | MAXIMUM RATINGS CASE 29
+2n3904-electrical | p2 | ELECTRICAL CHARACTERISTICS (TA = 25°C unless otherwise noted)
+2n3904-timing | p2 | SWITCHING CHARACTERISTICS
+2n3904-temperature | p1 | Operating and Storage Junction Temperature Range | TJ, Tstg | −55 to +150 | °C
+2n3904-package | p7 | PACKAGE DIMENSIONS
+ap2112-thermal | p3 | θJA Thermal Resistance (Junction to Ambient)(No Heatsink) SO-8 114 °C/W
+ap2112-limits | p3 | Absolute Maximum Ratings
+ap2112-conditions | p3 | Recommended Operating Conditions
+ap2112-electrical | p4 | Electrical Characteristics
+ap2112-pinout | p1 | Description Pin Assignments
+ap2112-temperature | p3 | TJ Operating Junction Temperature Range +150 °C
+bav99-thermal | p2 | Thermal Resistance Junction to Ambient Air (Note 6) RθJA 357 °C/W
+bav99-limits | p2 | Maximum Ratings
+bav99-electrical | p2 | Electrical Characteristics
+bav99-temperature | p2 | Operating and Storage Temperature Range TJ, TSTG -55 to +150 °C
+bav99-package | p4 | Package Outline Dimensions
+bav99-voltage | p2 | Non-Repetitive Peak Reverse Voltage VRM 100 V
+lm324-thermal | p2 | Thermal Resistance, Junction−to−Air (Note 2) Case 646 R(cid:2)JA 118 °C/W
+lm324-limits | p2 | MAXIMUM RATINGS (TA = +25°C, unless otherwise noted.)
+lm324-electrical | p3 | ELECTRICAL CHARACTERISTICS (VCC = 5.0 V, VEE = GND, TA = 25°C, unless otherwise noted.)
+lm324-pinout | p1 | The LM324 series are low−cost, quad operational amplifiers with PIN CONNECTIONS
+lm324-temperature | p2 | Junction Temperature TJ 150 °C
+lm324-package | p12 | PACKAGE DIMENSIONS
+lm393-limits | p2 | MAXIMUM RATINGS
+lm393-electrical | p3 | ELECTRICAL CHARACTERISTICS (VCC = 5.0 Vdc, Tlow ≤TA ≤ Thigh, unless otherwise noted.)
+lm393-pinout | p1 | PIN CONNECTIONS
+lm393-temperature | p2 | Maximum Operating Junction Temperature TJ(max) °C
+lm393-package | p9 | PACKAGE DIMENSIONS
+lm393-voltage | p1 | Differential Input Voltage Range Equal to Power Supply Voltage
+tl431-thermal | p3 | Thermal Resistance, Junction-to-Ambient R(cid:3)JA 178 114 240 °C/W
+tl431-limits | p2 | MAXIMUM RATINGS (Full operating ambient temperature range applies, unless otherwise noted.)
+tl431-conditions | p2 | RECOMMENDED OPERATING CONDITIONS
+tl431-electrical | p3 | ELECTRICAL CHARACTERISTICS (TA = 25 °C, unless otherwise noted.)
+tl431-temperature | p2 | Operating Junction Temperature TJ 150 °C
+tl431-package | p16 | PACKAGE DIMENSIONS
+2n7000-thermal | p2 | Thermal Resistance, Junction−to−Ambient R(cid:4)JA 357 °C/W
+2n7000-limits | p2 | MAXIMUM RATINGS D
+2n7000-conditions | p2 | Recommended Operating Conditions may affect device reliability.
+2n7000-electrical | p3 | ELECTRICAL CHARACTERISTICS (T = 25°C unless otherwise noted)
+2n7000-timing | p3 | SWITCHING CHARACTERISTICS (Note 1)
+2n7000-temperature | p2 | Operating and Storage Temperature TJ, Tstg −55 to +150 °C
+ap3211-thermal | p3 | θ Thermal Resistance 220 Cº/W
+ap3211-limits | p3 | Absolute Maximum Ratings
+ap3211-conditions | p3 | Recommended Operating Conditions
+ap3211-electrical | p4 | Electrical Characteristics
+ap3211-pinout | p1 | Description Pin Assignments
+ap3211-temperature | p3 | T Operating Junction Temperature +150 Cº
+pam8403-thermal | p3 | Thermal Resistance (Junction to Ambient) SOP-16 θJA 110
+pam8403-limits | p3 | Absolute Maximum Ratings (@TA = +25°C, unless otherwise specified.)
+pam8403-conditions | p3 | Recommended Operating Conditions (@TA = +25°C, unless otherwise specified.)
+pam8403-electrical | p4 | Electrical Characteristics (@TA = +25°C, VDD = 5V, Gain = 24dB, RL = 8Ω, unless otherwise specified.)
+pam8403-timing | p4 | fSW Switching Frequency VDD = 3.0V to 5.0V 260 kHz
+pam8403-pinout | p1 | Description Pin Assignments
+az1117-thermal | p4 | Thermal Resistance (No Heatsink, Note 4) θJA oC/W
+az1117-limits | p4 | Absolute Maximum Ratings
+az1117-conditions | p4 | Recommended Operating Conditions
+az1117-electrical | p5 | Electrical Characteristics
+az1117-pinout | p1 | Pin Assignments
+az1117-temperature | p1 | voltage accuracy to be within 1% for 1.5V, 1.8V, 2.5V, 2.85V, 3.3V,  Operation Junction Temperature: -40 to +125oC
+lm5155-thermal | p6 | R Junction-to-ambient thermal resistance (LM5155EVM-BST) 40.8 °C/W
+lm5155-limits | p5 | 8.1 Absolute Maximum Ratings
+lm5155-conditions | p6 | 8.3 Recommended Operating Conditions
+lm5155-electrical | p6 | 8.5 Electrical Characteristics
+lm5155-timing | p1 | – Maximum switching frequency of 2.2 MHz
+lm5155-pinout | p4 | 7 Pin Configuration and Functions
+iso7741-thermal | p8 | R Junction-to-ambient thermal resistance 83.4 75.2 109 °C/W
+iso7741-limits | p6 | 5.1 Absolute Maximum Ratings
+iso7741-conditions | p7 | 5.3 Recommended Operating Conditions
+iso7741-electrical | p13 | 5.9 Electrical Characteristics—5-V Supply
+iso7741-timing | p19 | 5.15 Switching Characteristics—5-V Supply
+iso7741-pinout | p4 | 4 Pin Configuration and Functions

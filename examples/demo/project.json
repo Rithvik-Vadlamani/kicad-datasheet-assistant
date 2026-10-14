@@ -1,0 +1,11 @@
+{
+  "schema_version": 1,
+  "name": "Fictional logic and LDO teaching demo",
+  "netlist": "netlist.xml",
+  "documents": [
+    {"id": "driver", "path": "datasheets/driver.txt", "title": "Fictional DEMO-MCU-33 datasheet", "parts": ["DEMO-MCU-33"], "revision": "A"},
+    {"id": "receiver", "path": "datasheets/receiver.txt", "title": "Fictional DEMO-SENSOR-5 datasheet", "parts": ["DEMO-SENSOR-5"], "revision": "B"},
+    {"id": "regulator", "path": "datasheets/regulator.txt", "title": "Fictional DEMO-LDO-33 datasheet", "parts": ["DEMO-LDO-33"], "revision": "A"}
+  ],
+  "settings": {"embedding_provider": "none", "chat_provider": "none"}
+}

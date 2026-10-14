@@ -1,0 +1,217 @@
+{
+  "root": {
+    "schematic": {
+      "name": "hierarchical-filter",
+      "title": "Wired hierarchical signal path",
+      "components": [
+        {
+          "ref": "J1",
+          "symbol": "Connector_Generic:Conn_01x02",
+          "value": "INPUT",
+          "at": [
+            50.8,
+            60.96
+          ],
+          "mirror": "y",
+          "footprint": "Connector_PinHeader_2.54mm:PinHeader_1x02_P2.54mm_Vertical"
+        }
+      ],
+      "wires": [
+        {
+          "start": "J1.1",
+          "end": "Filter.IN"
+        },
+        {
+          "start": "J1.2",
+          "end": [
+            60.96,
+            63.5
+          ]
+        },
+        {
+          "start": [
+            60.96,
+            63.5
+          ],
+          "end": [
+            60.96,
+            66.04
+          ]
+        },
+        {
+          "start": [
+            60.96,
+            66.04
+          ],
+          "end": "Filter.RETURN"
+        }
+      ]
+    },
+    "sheets": [
+      {
+        "name": "Filter",
+        "at": [
+          76.2,
+          55.88
+        ],
+        "size": [
+          40.64,
+          30.48
+        ],
+        "design": {
+          "schematic": {
+            "schema_version": 1,
+            "name": "filter-stage",
+            "title": "Readable RC filter — verification fixture",
+            "components": [
+              {
+                "ref": "R1",
+                "symbol": "Device:R",
+                "value": "1k",
+                "at": [
+                  81.28,
+                  60.96
+                ],
+                "angle": 90,
+                "footprint": "Resistor_SMD:R_0805_2012Metric"
+              },
+              {
+                "ref": "C1",
+                "symbol": "Device:C",
+                "value": "100n",
+                "at": [
+                  101.6,
+                  76.2
+                ],
+                "footprint": "Capacitor_SMD:C_0805_2012Metric"
+              },
+              {
+                "ref": "J2",
+                "symbol": "Connector_Generic:Conn_01x02",
+                "value": "OUTPUT",
+                "at": [
+                  132.08,
+                  60.96
+                ],
+                "footprint": "Connector_PinHeader_2.54mm:PinHeader_1x02_P2.54mm_Vertical"
+              }
+            ],
+            "wires": [
+              {
+                "start": [
+                  55.88,
+                  60.96
+                ],
+                "end": "R1.1"
+              },
+              {
+                "start": "R1.2",
+                "end": [
+                  101.6,
+                  60.96
+                ]
+              },
+              {
+                "start": [
+                  101.6,
+                  60.96
+                ],
+                "end": "J2.1"
+              },
+              {
+                "start": [
+                  101.6,
+                  60.96
+                ],
+                "end": "C1.1"
+              },
+              {
+                "start": [
+                  55.88,
+                  71.12
+                ],
+                "end": [
+                  55.88,
+                  91.44
+                ]
+              },
+              {
+                "start": [
+                  55.88,
+                  91.44
+                ],
+                "end": [
+                  101.6,
+                  91.44
+                ]
+              },
+              {
+                "start": "C1.2",
+                "end": [
+                  101.6,
+                  91.44
+                ]
+              },
+              {
+                "start": [
+                  101.6,
+                  91.44
+                ],
+                "end": [
+                  127.0,
+                  91.44
+                ]
+              },
+              {
+                "start": [
+                  127.0,
+                  91.44
+                ],
+                "end": "J2.2"
+              }
+            ],
+            "labels": [
+              {
+                "name": "OUT",
+                "at": [
+                  101.6,
+                  60.96
+                ]
+              },
+              {
+                "name": "RETURN",
+                "at": [
+                  101.6,
+                  91.44
+                ]
+              }
+            ],
+            "notes": [
+              "Signal path: INPUT → series resistor → OUTPUT.",
+              "Capacitor returns high-frequency current to the lower return wire.",
+              "Passive test fixture; component values are illustrative."
+            ]
+          },
+          "ports": [
+            {
+              "name": "IN",
+              "at": [
+                55.88,
+                60.96
+              ],
+              "direction": "input"
+            },
+            {
+              "name": "RETURN",
+              "at": [
+                55.88,
+                71.12
+              ],
+              "direction": "passive"
+            }
+          ]
+        }
+      }
+    ]
+  }
+}

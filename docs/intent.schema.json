@@ -1,0 +1,45 @@
+{
+  "additionalProperties": false,
+  "description": "Authored independently, before wire geometry; contains ALL physical symbol pins.",
+  "properties": {
+    "schema_version": {
+      "const": 1,
+      "default": 1,
+      "title": "Schema Version",
+      "type": "integer"
+    },
+    "nets": {
+      "additionalProperties": {
+        "items": {
+          "type": "string"
+        },
+        "type": "array"
+      },
+      "minProperties": 1,
+      "title": "Nets",
+      "type": "object"
+    },
+    "no_connect": {
+      "items": {
+        "type": "string"
+      },
+      "title": "No Connect",
+      "type": "array"
+    },
+    "pad_map": {
+      "additionalProperties": {
+        "additionalProperties": {
+          "type": "string"
+        },
+        "type": "object"
+      },
+      "title": "Pad Map",
+      "type": "object"
+    }
+  },
+  "required": [
+    "nets"
+  ],
+  "title": "Intent",
+  "type": "object"
+}

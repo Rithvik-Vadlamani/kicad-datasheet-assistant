@@ -1,0 +1,268 @@
+{
+  "$defs": {
+    "Document": {
+      "additionalProperties": false,
+      "properties": {
+        "id": {
+          "pattern": "^[A-Za-z0-9_-]+$",
+          "title": "Id",
+          "type": "string"
+        },
+        "path": {
+          "title": "Path",
+          "type": "string"
+        },
+        "title": {
+          "title": "Title",
+          "type": "string"
+        },
+        "parts": {
+          "items": {
+            "type": "string"
+          },
+          "title": "Parts",
+          "type": "array"
+        },
+        "revision": {
+          "default": "unspecified",
+          "title": "Revision",
+          "type": "string"
+        },
+        "kind": {
+          "default": "datasheet",
+          "enum": [
+            "datasheet",
+            "application_note",
+            "errata",
+            "design_note"
+          ],
+          "title": "Kind",
+          "type": "string"
+        },
+        "source_url": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Source Url"
+        }
+      },
+      "required": [
+        "id",
+        "path",
+        "title"
+      ],
+      "title": "Document",
+      "type": "object"
+    },
+    "Settings": {
+      "additionalProperties": false,
+      "properties": {
+        "ocr_mode": {
+          "default": "off",
+          "enum": [
+            "off",
+            "auto",
+            "always"
+          ],
+          "title": "Ocr Mode",
+          "type": "string"
+        },
+        "ocr_language": {
+          "default": "eng",
+          "pattern": "^[a-zA-Z_+]+$",
+          "title": "Ocr Language",
+          "type": "string"
+        },
+        "ocr_dpi": {
+          "default": 300,
+          "maximum": 400,
+          "minimum": 150,
+          "title": "Ocr Dpi",
+          "type": "integer"
+        },
+        "shared_extraction_cache": {
+          "default": "",
+          "title": "Shared Extraction Cache",
+          "type": "string"
+        },
+        "embedding_query_prefix": {
+          "default": "",
+          "title": "Embedding Query Prefix",
+          "type": "string"
+        },
+        "embedding_document_prefix": {
+          "default": "",
+          "title": "Embedding Document Prefix",
+          "type": "string"
+        },
+        "reranker_model": {
+          "default": "",
+          "title": "Reranker Model",
+          "type": "string"
+        },
+        "reranker_candidates": {
+          "default": 30,
+          "maximum": 100,
+          "minimum": 5,
+          "title": "Reranker Candidates",
+          "type": "integer"
+        },
+        "restore_parent_context": {
+          "default": true,
+          "title": "Restore Parent Context",
+          "type": "boolean"
+        },
+        "embedding_provider": {
+          "default": "none",
+          "enum": [
+            "none",
+            "ollama",
+            "openai",
+            "local"
+          ],
+          "title": "Embedding Provider",
+          "type": "string"
+        },
+        "embedding_model": {
+          "default": "",
+          "title": "Embedding Model",
+          "type": "string"
+        },
+        "chat_provider": {
+          "default": "none",
+          "enum": [
+            "none",
+            "ollama",
+            "openai"
+          ],
+          "title": "Chat Provider",
+          "type": "string"
+        },
+        "chat_model": {
+          "default": "",
+          "title": "Chat Model",
+          "type": "string"
+        },
+        "ollama_url": {
+          "default": "http://127.0.0.1:11434",
+          "title": "Ollama Url",
+          "type": "string"
+        },
+        "chunk_chars": {
+          "default": 2200,
+          "maximum": 6000,
+          "minimum": 500,
+          "title": "Chunk Chars",
+          "type": "integer"
+        },
+        "overlap_chars": {
+          "default": 250,
+          "maximum": 1000,
+          "minimum": 0,
+          "title": "Overlap Chars",
+          "type": "integer"
+        },
+        "top_k": {
+          "default": 12,
+          "maximum": 40,
+          "minimum": 1,
+          "title": "Top K",
+          "type": "integer"
+        },
+        "context_chars": {
+          "default": 38000,
+          "maximum": 120000,
+          "minimum": 6000,
+          "title": "Context Chars",
+          "type": "integer"
+        },
+        "max_output_tokens": {
+          "default": 4000,
+          "maximum": 16000,
+          "minimum": 500,
+          "title": "Max Output Tokens",
+          "type": "integer"
+        }
+      },
+      "title": "Settings",
+      "type": "object"
+    }
+  },
+  "additionalProperties": false,
+  "properties": {
+    "schema_version": {
+      "const": 1,
+      "default": 1,
+      "title": "Schema Version",
+      "type": "integer"
+    },
+    "name": {
+      "title": "Name",
+      "type": "string"
+    },
+    "documents": {
+      "items": {
+        "$ref": "#/$defs/Document"
+      },
+      "title": "Documents",
+      "type": "array"
+    },
+    "netlist": {
+      "anyOf": [
+        {
+          "type": "string"
+        },
+        {
+          "type": "null"
+        }
+      ],
+      "default": null,
+      "title": "Netlist"
+    },
+    "schematic": {
+      "anyOf": [
+        {
+          "type": "string"
+        },
+        {
+          "type": "null"
+        }
+      ],
+      "default": null,
+      "title": "Schematic"
+    },
+    "schematic_hashes": {
+      "additionalProperties": {
+        "type": "string"
+      },
+      "title": "Schematic Hashes",
+      "type": "object"
+    },
+    "component_parts": {
+      "additionalProperties": {
+        "type": "string"
+      },
+      "title": "Component Parts",
+      "type": "object"
+    },
+    "design": {
+      "default": "design.json",
+      "title": "Design",
+      "type": "string"
+    },
+    "settings": {
+      "$ref": "#/$defs/Settings"
+    }
+  },
+  "required": [
+    "name"
+  ],
+  "title": "Project",
+  "type": "object"
+}

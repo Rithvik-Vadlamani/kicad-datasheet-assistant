@@ -1,0 +1,13 @@
+FICTIONAL EDUCATIONAL DATASHEET. Not a commercial part. Never use for hardware design.
+DEMO-LDO-33 | Revision A | PDF-equivalent logical page 1
+
+Output voltage: 3.3 V nominal. This teaching example assumes exactly 3.3 V output.
+Ground current maximum is 0.005 A at the scenario's input and load conditions.
+Junction-to-ambient thermal resistance is 100 K/W for the declared teaching PCB.
+Maximum recommended junction temperature is 125 degC.
+Pin 1 is VIN, pin 2 is GND and pin 3 is VOUT.
+
+For this simplified linear regulator, P = (VIN - VOUT) * IOUT + VIN * IQ.
+Estimate junction temperature as TJ = TA + P * thetaJA under steady-state conditions.
+The thermal resistance depends strongly on PCB copper and airflow.
+Output capacitor ESR, dropout, current limiting and transient response are not specified.

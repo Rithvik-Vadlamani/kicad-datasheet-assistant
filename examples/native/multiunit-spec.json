@@ -1,0 +1,256 @@
+{
+  "name": "dual-buffer",
+  "title": "Dual voltage follower with shared supply unit",
+  "components": [
+    {
+      "ref": "U1",
+      "symbol": "Amplifier_Operational:LM358",
+      "value": "LM358",
+      "part": "LM358",
+      "footprint": "Package_SO:SOIC-8_3.9x4.9mm_P1.27mm",
+      "unit": 1,
+      "at": [
+        81.28,
+        60.96
+      ]
+    },
+    {
+      "ref": "U1",
+      "symbol": "Amplifier_Operational:LM358",
+      "value": "LM358",
+      "part": "LM358",
+      "footprint": "Package_SO:SOIC-8_3.9x4.9mm_P1.27mm",
+      "unit": 2,
+      "at": [
+        81.28,
+        101.6
+      ]
+    },
+    {
+      "ref": "U1",
+      "symbol": "Amplifier_Operational:LM358",
+      "value": "LM358",
+      "part": "LM358",
+      "footprint": "Package_SO:SOIC-8_3.9x4.9mm_P1.27mm",
+      "unit": 3,
+      "at": [
+        81.28,
+        142.24
+      ],
+      "field_positions": {
+        "Reference": [
+          86.36,
+          139.7
+        ],
+        "Value": [
+          86.36,
+          144.78
+        ]
+      }
+    },
+    {
+      "ref": "J1",
+      "symbol": "Connector_Generic:Conn_01x02",
+      "value": "INPUTS",
+      "footprint": "Connector_PinHeader_2.54mm:PinHeader_1x02_P2.54mm_Vertical",
+      "at": [
+        50.8,
+        58.42
+      ],
+      "mirror": "y"
+    },
+    {
+      "ref": "J2",
+      "symbol": "Connector_Generic:Conn_01x02",
+      "value": "OUTPUTS",
+      "footprint": "Connector_PinHeader_2.54mm:PinHeader_1x02_P2.54mm_Vertical",
+      "at": [
+        116.84,
+        60.96
+      ]
+    },
+    {
+      "ref": "J3",
+      "symbol": "Connector_Generic:Conn_01x02",
+      "value": "SUPPLY",
+      "footprint": "Connector_PinHeader_2.54mm:PinHeader_1x02_P2.54mm_Vertical",
+      "at": [
+        50.8,
+        134.62
+      ],
+      "mirror": "y"
+    },
+    {
+      "ref": "#FLG01",
+      "symbol": "power:PWR_FLAG",
+      "value": "PWR_FLAG",
+      "at": [
+        66.04,
+        134.62
+      ]
+    },
+    {
+      "ref": "#FLG02",
+      "symbol": "power:PWR_FLAG",
+      "value": "PWR_FLAG",
+      "at": [
+        66.04,
+        149.86
+      ]
+    }
+  ],
+  "wires": [
+    {
+      "start": "J1.1",
+      "end": "U1.3"
+    },
+    {
+      "start": "J1.2",
+      "end": [
+        60.96,
+        60.96
+      ]
+    },
+    {
+      "start": [
+        60.96,
+        60.96
+      ],
+      "end": [
+        60.96,
+        99.06
+      ]
+    },
+    {
+      "start": [
+        60.96,
+        99.06
+      ],
+      "end": "U1.5"
+    },
+    {
+      "start": "U1.1",
+      "end": "J2.1"
+    },
+    {
+      "start": [
+        96.52,
+        60.96
+      ],
+      "end": [
+        96.52,
+        73.66
+      ]
+    },
+    {
+      "start": [
+        96.52,
+        73.66
+      ],
+      "end": [
+        68.58,
+        73.66
+      ]
+    },
+    {
+      "start": [
+        68.58,
+        73.66
+      ],
+      "end": [
+        68.58,
+        63.5
+      ]
+    },
+    {
+      "start": [
+        68.58,
+        63.5
+      ],
+      "end": "U1.2"
+    },
+    {
+      "start": "U1.7",
+      "end": [
+        106.68,
+        101.6
+      ]
+    },
+    {
+      "start": [
+        106.68,
+        101.6
+      ],
+      "end": [
+        106.68,
+        63.5
+      ]
+    },
+    {
+      "start": [
+        106.68,
+        63.5
+      ],
+      "end": "J2.2"
+    },
+    {
+      "start": [
+        96.52,
+        101.6
+      ],
+      "end": [
+        96.52,
+        114.3
+      ]
+    },
+    {
+      "start": [
+        96.52,
+        114.3
+      ],
+      "end": [
+        68.58,
+        114.3
+      ]
+    },
+    {
+      "start": [
+        68.58,
+        114.3
+      ],
+      "end": [
+        68.58,
+        104.14
+      ]
+    },
+    {
+      "start": [
+        68.58,
+        104.14
+      ],
+      "end": "U1.6"
+    },
+    {
+      "start": "J3.1",
+      "end": "U1.8"
+    },
+    {
+      "start": "J3.2",
+      "end": [
+        55.88,
+        149.86
+      ]
+    },
+    {
+      "start": [
+        55.88,
+        149.86
+      ],
+      "end": "U1.4"
+    }
+  ],
+  "labels": [],
+  "notes": [
+    "Native multi-unit verification fixture; illustrative signal topology."
+  ]
+}

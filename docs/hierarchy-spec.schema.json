@@ -1,0 +1,422 @@
+{
+  "$defs": {
+    "Component": {
+      "additionalProperties": false,
+      "properties": {
+        "ref": {
+          "pattern": "^#?[A-Za-z][A-Za-z0-9_]*[0-9]+$",
+          "title": "Ref",
+          "type": "string"
+        },
+        "symbol": {
+          "pattern": "^[^:]+:[^:]+$",
+          "title": "Symbol",
+          "type": "string"
+        },
+        "value": {
+          "title": "Value",
+          "type": "string"
+        },
+        "at": {
+          "maxItems": 2,
+          "minItems": 2,
+          "prefixItems": [
+            {
+              "type": "number"
+            },
+            {
+              "type": "number"
+            }
+          ],
+          "title": "At",
+          "type": "array"
+        },
+        "angle": {
+          "default": 0,
+          "enum": [
+            0,
+            90,
+            180,
+            270
+          ],
+          "title": "Angle",
+          "type": "integer"
+        },
+        "mirror": {
+          "anyOf": [
+            {
+              "enum": [
+                "x",
+                "y"
+              ],
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Mirror"
+        },
+        "unit": {
+          "default": 1,
+          "minimum": 1,
+          "title": "Unit",
+          "type": "integer"
+        },
+        "footprint": {
+          "default": "",
+          "title": "Footprint",
+          "type": "string"
+        },
+        "part": {
+          "default": "",
+          "title": "Part",
+          "type": "string"
+        },
+        "dnp": {
+          "default": false,
+          "title": "Dnp",
+          "type": "boolean"
+        },
+        "field_positions": {
+          "additionalProperties": {
+            "maxItems": 2,
+            "minItems": 2,
+            "prefixItems": [
+              {
+                "type": "number"
+              },
+              {
+                "type": "number"
+              }
+            ],
+            "type": "array"
+          },
+          "title": "Field Positions",
+          "type": "object"
+        }
+      },
+      "required": [
+        "ref",
+        "symbol",
+        "value",
+        "at"
+      ],
+      "title": "Component",
+      "type": "object"
+    },
+    "Label": {
+      "additionalProperties": false,
+      "properties": {
+        "name": {
+          "title": "Name",
+          "type": "string"
+        },
+        "at": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "maxItems": 2,
+              "minItems": 2,
+              "prefixItems": [
+                {
+                  "type": "number"
+                },
+                {
+                  "type": "number"
+                }
+              ],
+              "type": "array"
+            }
+          ],
+          "title": "At"
+        }
+      },
+      "required": [
+        "name",
+        "at"
+      ],
+      "title": "Label",
+      "type": "object"
+    },
+    "Port": {
+      "additionalProperties": false,
+      "properties": {
+        "name": {
+          "pattern": "^[A-Za-z_][A-Za-z0-9_+-]*$",
+          "title": "Name",
+          "type": "string"
+        },
+        "at": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "maxItems": 2,
+              "minItems": 2,
+              "prefixItems": [
+                {
+                  "type": "number"
+                },
+                {
+                  "type": "number"
+                }
+              ],
+              "type": "array"
+            }
+          ],
+          "title": "At"
+        },
+        "direction": {
+          "default": "passive",
+          "enum": [
+            "input",
+            "output",
+            "bidirectional",
+            "tri_state",
+            "passive"
+          ],
+          "title": "Direction",
+          "type": "string"
+        }
+      },
+      "required": [
+        "name",
+        "at"
+      ],
+      "title": "Port",
+      "type": "object"
+    },
+    "SchematicSpec": {
+      "additionalProperties": false,
+      "properties": {
+        "schema_version": {
+          "const": 1,
+          "default": 1,
+          "title": "Schema Version",
+          "type": "integer"
+        },
+        "name": {
+          "pattern": "^[a-zA-Z0-9_-]+$",
+          "title": "Name",
+          "type": "string"
+        },
+        "title": {
+          "title": "Title",
+          "type": "string"
+        },
+        "components": {
+          "items": {
+            "$ref": "#/$defs/Component"
+          },
+          "title": "Components",
+          "type": "array"
+        },
+        "wires": {
+          "items": {
+            "$ref": "#/$defs/Wire"
+          },
+          "title": "Wires",
+          "type": "array"
+        },
+        "labels": {
+          "items": {
+            "$ref": "#/$defs/Label"
+          },
+          "title": "Labels",
+          "type": "array"
+        },
+        "junctions": {
+          "items": {
+            "maxItems": 2,
+            "minItems": 2,
+            "prefixItems": [
+              {
+                "type": "number"
+              },
+              {
+                "type": "number"
+              }
+            ],
+            "type": "array"
+          },
+          "title": "Junctions",
+          "type": "array"
+        },
+        "no_connect": {
+          "items": {
+            "type": "string"
+          },
+          "title": "No Connect",
+          "type": "array"
+        },
+        "notes": {
+          "items": {
+            "type": "string"
+          },
+          "title": "Notes",
+          "type": "array"
+        }
+      },
+      "required": [
+        "name",
+        "title"
+      ],
+      "title": "SchematicSpec",
+      "type": "object"
+    },
+    "SheetDesign": {
+      "additionalProperties": false,
+      "properties": {
+        "schematic": {
+          "$ref": "#/$defs/SchematicSpec"
+        },
+        "ports": {
+          "items": {
+            "$ref": "#/$defs/Port"
+          },
+          "title": "Ports",
+          "type": "array"
+        },
+        "sheets": {
+          "items": {
+            "$ref": "#/$defs/SheetInstance"
+          },
+          "title": "Sheets",
+          "type": "array"
+        }
+      },
+      "required": [
+        "schematic"
+      ],
+      "title": "SheetDesign",
+      "type": "object"
+    },
+    "SheetInstance": {
+      "additionalProperties": false,
+      "properties": {
+        "name": {
+          "pattern": "^[A-Za-z][A-Za-z0-9_]*$",
+          "title": "Name",
+          "type": "string"
+        },
+        "at": {
+          "maxItems": 2,
+          "minItems": 2,
+          "prefixItems": [
+            {
+              "type": "number"
+            },
+            {
+              "type": "number"
+            }
+          ],
+          "title": "At",
+          "type": "array"
+        },
+        "size": {
+          "default": [
+            40.64,
+            30.48
+          ],
+          "maxItems": 2,
+          "minItems": 2,
+          "prefixItems": [
+            {
+              "type": "number"
+            },
+            {
+              "type": "number"
+            }
+          ],
+          "title": "Size",
+          "type": "array"
+        },
+        "design": {
+          "$ref": "#/$defs/SheetDesign"
+        }
+      },
+      "required": [
+        "name",
+        "at",
+        "design"
+      ],
+      "title": "SheetInstance",
+      "type": "object"
+    },
+    "Wire": {
+      "additionalProperties": false,
+      "properties": {
+        "start": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "maxItems": 2,
+              "minItems": 2,
+              "prefixItems": [
+                {
+                  "type": "number"
+                },
+                {
+                  "type": "number"
+                }
+              ],
+              "type": "array"
+            }
+          ],
+          "title": "Start"
+        },
+        "end": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "maxItems": 2,
+              "minItems": 2,
+              "prefixItems": [
+                {
+                  "type": "number"
+                },
+                {
+                  "type": "number"
+                }
+              ],
+              "type": "array"
+            }
+          ],
+          "title": "End"
+        }
+      },
+      "required": [
+        "start",
+        "end"
+      ],
+      "title": "Wire",
+      "type": "object"
+    }
+  },
+  "additionalProperties": false,
+  "properties": {
+    "schema_version": {
+      "const": 1,
+      "default": 1,
+      "title": "Schema Version",
+      "type": "integer"
+    },
+    "root": {
+      "$ref": "#/$defs/SheetDesign"
+    }
+  },
+  "required": [
+    "root"
+  ],
+  "title": "HierarchySpec",
+  "type": "object"
+}

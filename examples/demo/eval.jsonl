@@ -1,0 +1,6 @@
+{"question":"U1 minimum high output VOH voltage", "refs":["U1"], "expected_documents":["driver"]}
+{"question":"U2 digital input VIH VIL thresholds", "refs":["U2"], "expected_documents":["receiver"]}
+{"question":"Can U1 and U2 use compatible logic levels?", "refs":["U1","U2"], "expected_documents":["driver","receiver"]}
+{"question":"Why might U3 get hot? Thermal junction temperature dissipation", "refs":["U3"], "expected_documents":["regulator"]}
+{"question":"U1 and U2 powered off input tolerance", "refs":["U1","U2"], "expected_documents":["driver","receiver"]}
+{"question":"quasarzz gravitonz", "refs":[], "expected_documents":[], "expect_empty":true}

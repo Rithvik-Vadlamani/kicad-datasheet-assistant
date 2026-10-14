@@ -1,0 +1,271 @@
+{
+  "$defs": {
+    "Candidate": {
+      "additionalProperties": false,
+      "properties": {
+        "ref": {
+          "minLength": 1,
+          "title": "Ref",
+          "type": "string"
+        },
+        "part": {
+          "minLength": 1,
+          "title": "Part",
+          "type": "string"
+        },
+        "package": {
+          "minLength": 1,
+          "title": "Package",
+          "type": "string"
+        },
+        "revision": {
+          "minLength": 1,
+          "title": "Revision",
+          "type": "string"
+        }
+      },
+      "required": [
+        "ref",
+        "part",
+        "package",
+        "revision"
+      ],
+      "title": "Candidate",
+      "type": "object"
+    },
+    "Review": {
+      "additionalProperties": false,
+      "properties": {
+        "actor": {
+          "minLength": 1,
+          "title": "Actor",
+          "type": "string"
+        },
+        "method": {
+          "const": "original_page_review",
+          "title": "Method",
+          "type": "string"
+        },
+        "rationale": {
+          "minLength": 20,
+          "title": "Rationale",
+          "type": "string"
+        },
+        "timestamp": {
+          "title": "Timestamp",
+          "type": "string"
+        },
+        "binding_hash": {
+          "title": "Binding Hash",
+          "type": "string"
+        }
+      },
+      "required": [
+        "actor",
+        "method",
+        "rationale",
+        "timestamp",
+        "binding_hash"
+      ],
+      "title": "Review",
+      "type": "object"
+    },
+    "Source": {
+      "additionalProperties": false,
+      "properties": {
+        "document": {
+          "title": "Document",
+          "type": "string"
+        },
+        "sha256": {
+          "pattern": "^[0-9a-f]{64}$",
+          "title": "Sha256",
+          "type": "string"
+        },
+        "page": {
+          "minimum": 1,
+          "title": "Page",
+          "type": "integer"
+        },
+        "quote": {
+          "minLength": 8,
+          "title": "Quote",
+          "type": "string"
+        },
+        "bbox": {
+          "anyOf": [
+            {
+              "maxItems": 4,
+              "minItems": 4,
+              "prefixItems": [
+                {
+                  "type": "number"
+                },
+                {
+                  "type": "number"
+                },
+                {
+                  "type": "number"
+                },
+                {
+                  "type": "number"
+                }
+              ],
+              "type": "array"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Bbox"
+        },
+        "table": {
+          "anyOf": [
+            {
+              "minimum": 0,
+              "type": "integer"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Table"
+        },
+        "row": {
+          "anyOf": [
+            {
+              "minimum": 0,
+              "type": "integer"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Row"
+        },
+        "column": {
+          "anyOf": [
+            {
+              "minimum": 0,
+              "type": "integer"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Column"
+        }
+      },
+      "required": [
+        "document",
+        "sha256",
+        "page",
+        "quote"
+      ],
+      "title": "Source",
+      "type": "object"
+    }
+  },
+  "additionalProperties": false,
+  "properties": {
+    "schema_version": {
+      "const": 1,
+      "default": 1,
+      "title": "Schema Version",
+      "type": "integer"
+    },
+    "id": {
+      "minLength": 1,
+      "title": "Id",
+      "type": "string"
+    },
+    "candidate": {
+      "$ref": "#/$defs/Candidate"
+    },
+    "parameter": {
+      "title": "Parameter",
+      "type": "string"
+    },
+    "category": {
+      "enum": [
+        "recommended",
+        "absolute_maximum",
+        "electrical",
+        "timing",
+        "thermal",
+        "mechanical"
+      ],
+      "title": "Category",
+      "type": "string"
+    },
+    "bound": {
+      "enum": [
+        "min",
+        "typ",
+        "max",
+        "nominal"
+      ],
+      "title": "Bound",
+      "type": "string"
+    },
+    "value": {
+      "title": "Value",
+      "type": "number"
+    },
+    "unit": {
+      "title": "Unit",
+      "type": "string"
+    },
+    "conditions": {
+      "additionalProperties": {
+        "type": "string"
+      },
+      "minProperties": 1,
+      "title": "Conditions",
+      "type": "object"
+    },
+    "source": {
+      "$ref": "#/$defs/Source"
+    },
+    "state": {
+      "default": "extracted",
+      "enum": [
+        "extracted",
+        "needs_review",
+        "accepted_for_use",
+        "rejected",
+        "superseded"
+      ],
+      "title": "State",
+      "type": "string"
+    },
+    "review": {
+      "anyOf": [
+        {
+          "$ref": "#/$defs/Review"
+        },
+        {
+          "type": "null"
+        }
+      ],
+      "default": null
+    }
+  },
+  "required": [
+    "id",
+    "candidate",
+    "parameter",
+    "category",
+    "bound",
+    "value",
+    "unit",
+    "conditions",
+    "source"
+  ],
+  "title": "ParameterFact",
+  "type": "object"
+}

@@ -1,0 +1,13 @@
+FICTIONAL EDUCATIONAL DATASHEET. Not a commercial part. Never use for hardware design.
+DEMO-SENSOR-5 | Revision B | PDF-equivalent logical page 1
+
+Recommended operating supply voltage: 4.5 V minimum, 5.5 V maximum.
+Absolute maximum supply voltage: -0.3 V minimum, 6.0 V maximum.
+VIH minimum is 3.5 V at VDD = 5.0 V, TA = -40 to 85 degC.
+VIL maximum is 1.5 V at VDD = 5.0 V, TA = -40 to 85 degC.
+The input leakage magnitude is at most 1 uA over the stated temperature range.
+Pin 3 is DIGITAL_IN. Pins 1 and 2 are VDD and GND respectively.
+
+These thresholds are only specified at a 5.0 V supply in this fictional example.
+Applying a voltage outside recommended operation does not establish reliable function.
+Powered-off input tolerance is not specified in this excerpt.

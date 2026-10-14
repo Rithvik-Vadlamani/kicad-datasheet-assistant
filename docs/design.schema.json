@@ -1,0 +1,180 @@
+{
+  "$defs": {
+    "Check": {
+      "additionalProperties": false,
+      "properties": {
+        "id": {
+          "title": "Id",
+          "type": "string"
+        },
+        "kind": {
+          "enum": [
+            "logic",
+            "pin_voltage",
+            "ldo_thermal",
+            "power_budget",
+            "i2c_pullup"
+          ],
+          "title": "Kind",
+          "type": "string"
+        },
+        "inputs": {
+          "additionalProperties": {
+            "type": "string"
+          },
+          "title": "Inputs",
+          "type": "object"
+        },
+        "endpoints": {
+          "items": {
+            "type": "string"
+          },
+          "title": "Endpoints",
+          "type": "array"
+        },
+        "conditions": {
+          "minLength": 10,
+          "title": "Conditions",
+          "type": "string"
+        },
+        "conditions_reviewed": {
+          "default": false,
+          "title": "Conditions Reviewed",
+          "type": "boolean"
+        }
+      },
+      "required": [
+        "id",
+        "kind",
+        "inputs",
+        "conditions"
+      ],
+      "title": "Check",
+      "type": "object"
+    },
+    "Fact": {
+      "additionalProperties": false,
+      "properties": {
+        "value": {
+          "title": "Value",
+          "type": "number"
+        },
+        "unit": {
+          "enum": [
+            "V",
+            "A",
+            "W",
+            "degC",
+            "K/W",
+            "ohm",
+            "F",
+            "s"
+          ],
+          "title": "Unit",
+          "type": "string"
+        },
+        "condition": {
+          "minLength": 10,
+          "title": "Condition",
+          "type": "string"
+        },
+        "reviewed": {
+          "default": false,
+          "title": "Reviewed",
+          "type": "boolean"
+        },
+        "basis": {
+          "enum": [
+            "datasheet",
+            "scenario"
+          ],
+          "title": "Basis",
+          "type": "string"
+        },
+        "document": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Document"
+        },
+        "page": {
+          "anyOf": [
+            {
+              "minimum": 1,
+              "type": "integer"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Page"
+        },
+        "quote": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Quote"
+        },
+        "ref": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Ref"
+        }
+      },
+      "required": [
+        "value",
+        "unit",
+        "condition",
+        "basis"
+      ],
+      "title": "Fact",
+      "type": "object"
+    }
+  },
+  "additionalProperties": false,
+  "properties": {
+    "assumptions": {
+      "items": {
+        "type": "string"
+      },
+      "title": "Assumptions",
+      "type": "array"
+    },
+    "facts": {
+      "additionalProperties": {
+        "$ref": "#/$defs/Fact"
+      },
+      "title": "Facts",
+      "type": "object"
+    },
+    "checks": {
+      "items": {
+        "$ref": "#/$defs/Check"
+      },
+      "title": "Checks",
+      "type": "array"
+    }
+  },
+  "title": "Design",
+  "type": "object"
+}
